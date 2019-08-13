@@ -45,5 +45,66 @@ def cartesianoC(tuplaA):
 def faseC(tuplaA):
     tuplaFinal=(math.atan(tuplaA[1]/tuplaA[0]))
     return(tuplaFinal)
+
+#---------------------------- calculadora matriz ----------------------------------------#
+
+
+def multiplicaEscalar(tupla,c):
+    tuplaF = (tupla[0]*c,tupla[1]*c)
+    return tuplaF
+
+def sumaV(vectorA,vectorB):
+    vectorR=[]
+    for i in range(len(vectorA)):
+        vectorR.append(sumaC(vectorA[0],vectorB[0]))
+
+    return vectorR
+
+def inversaV(vector):
+    vectorF=[]
+    print(vector)
+    for i in range(len(vector)): vectorF.append(vector[i][0],vector[i][1])
     
+
+def sumaM(matrizA,matrizB):
+    matrizR=[]
+    for q in range(len(matrizA)):
+        matrizR.append([])
+        for k in range(len(matrizA[0])):matrizR[q].append(0)
+    for i in range(0,len(matrizA)):
+        for j in range(len(matrizA[0])):matrizR[i][j]=sumaC(matrizA[i][j],matrizB[i][j])
+            
+    return matrizR
+
+
+def restaM(matrizA,matrizB):
+    matrizR=[]
+    for q in range(len(matrizA)):
+        matrizR.append([])
+        for k in range(len(matrizA[0])):matrizR[q].append(0)
+
+    for i in range(0,len(matrizA)):
+        for j in range(len(matrizA[0])):matrizR[i][j]=restaC(matrizA[i][j],matrizB[i][j])
+            
+    return matrizR
+
+
+def multiplicacionM(matrizA,matrizB):
+    matrizR=[]
+    if (len(matrizA)==len(matrizB[0])):
+        for l in range(len(matrizB)):
+            matrizR.append([])
+            for k in range(len(matrizB[0])):
+                matrizR[l].append(0)
+        
+        for i in range(len(matrizA)):
+            for j in range(len(matrizB[0])):
+                matrizR[j][i]=matrizA[j][i]*matrizB[i][j]
+
     
+    return matrizR
+
+
+
+
+
