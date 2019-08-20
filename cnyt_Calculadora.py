@@ -46,7 +46,7 @@ def faseC(tuplaA):
     tuplaFinal=(math.atan(tuplaA[1]/tuplaA[0]))
     return(tuplaFinal)
 
-#---------------------------- calculadora matriz ----------------------------------------#
+#---------------------------------- calculadora matriz ----------------------------------------#
 
 
 def multiplicaEscalar(tupla,c):
@@ -91,20 +91,30 @@ def restaM(matrizA,matrizB):
 
 def multiplicacionM(matrizA,matrizB):
     matrizR=[]
-    if (len(matrizA)==len(matrizB[0])):
-        for l in range(len(matrizB)):
-            matrizR.append([])
-            for k in range(len(matrizB[0])):
-                matrizR[l].append(0)
-        
-        for i in range(len(matrizA)):
-            for j in range(len(matrizB[0])):
-                matrizR[j][i]=matrizA[j][i]*matrizB[i][j]
-
-    
+    if (len(matrizA[0])==len(matrizB)):
+        for i in range(0,len(matrizA)):
+            matrizR.append([int(i) for i in range(0,len(matrizA))]);
+            for j in range(0,len(matrizB[0])):
+                matrizR[i][j]=matrizA[i][j]*matrizB[j][i]
     return matrizR
 
+def inversaM(matriz):
+    matrizR=[]
+    for i in range(0,len(matriz)):
+        matrizR.append([int(i) for i in range(0,len(matriz[0]))]);
+        for j in range(0,len(matriz[0])):
+            matrizR[i][j]=matriz[i][j]*-1
+                       
+    return matrizR
+
+def escalarM(matriz, c):
+    matrizR=[]
+    for i in range(0,len(matriz)):
+        matrizR.append([int(i) for i in range(0,len(matriz[0]))]);
+        for j in range(0,len(matriz[0])):
+            matrizR[i][j]= c*matriz[i][j]
+    return matriz
 
 
-
+    
 
