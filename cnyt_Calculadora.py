@@ -14,13 +14,14 @@ def sumaC(tuplaA,tuplaB):
     tuplaFinal=(tuplaA[0]+tuplaB[0],tuplaA[1]+tuplaB[1])
     return(tuplaFinal)
 
+
+
 def multiplicacionC(tuplaA,tuplaB):
     if (type(tuplaA)==int):num=tuplaA;tuplaA=(num,0)
     if (type(tuplaB)==int):num=tuplaB;tuplaB=(num,0)
     tuplaFinal1=((tuplaA[0]*tuplaB[0]),-(tuplaA[1]*tuplaB[1]))
     tuplaFinal2=(tuplaA[0]*tuplaB[1]),(tuplaA[1]*tuplaB[0])
     return (tuplaFinal1[0]+tuplaFinal1[1],tuplaFinal2[0]+tuplaFinal2[1])
-    
 
 def divisionC(tuplaA,tuplaB):
     if (type(tuplaA)==int):num=tuplaA;tuplaA=(num,0)
@@ -72,13 +73,11 @@ def sumaV(vectorA,vectorB):
     vectorR=[]
     for i in range(len(vectorA)):
         vectorR.append(sumaC(vectorA[0],vectorB[0]))
-
     return vectorR
 
 def inversaV(vector):
-    vectorF=[]
-    for i in range(len(vector)): vectorF.append(vector[i][0],vector[i][1])
-    
+    tuplaF=(-tupla[0],-tupla[1])
+    return tuplaF
 
 def sumaM(matrizA,matrizB):
     matrizR=[]
@@ -90,7 +89,6 @@ def sumaM(matrizA,matrizB):
             
     return matrizR
 
-
 def restaM(matrizA,matrizB):
     matrizR=[]
     for q in range(len(matrizA)):
@@ -100,6 +98,13 @@ def restaM(matrizA,matrizB):
         for j in range(len(matrizA[0])):matrizR[i][j]=restaC(matrizA[i][j],matrizB[i][j])
     return matrizR
 
+def inversaM():
+    matrizR=[]
+    for i in range(0,len(matriz)):
+        matrizR.append([int(i) for i in range(0,len(matriz[0]))]);
+        for j in range(0,len(matriz[0])):
+            matrizR[i][j]=-matriz[i][j]
+    return matrizR
 
 def multiplicacionM(matrizA,matrizB):
     if (len(matrizB)==1 and (len(matrizB[0])==len(matrizA[0]))):
@@ -191,6 +196,28 @@ def adj(a,b,matriz,matrizR):
 def determinante(vector,constante):
     return (constante*((vector[0]*vector[3])-(vector[1]*vector[2])))
                 
+def distanciaM(matrizA,matriB):
+    if ((len(matrizA)==len(matrizB))and(len(matrizA[0])==len(matrizB[0]))):
+        pass
+    
+def normaM(matriz):
+    suma=0
+    for i in range(0,len(matriz)):
+        for j in range(0,len(matriz[0])):
+            if (type(matriz[i][j])!=int):
+                tupla = matriz[i][j]
+                tupla2 = (matriz[i][j][0],-matriz[i][j][1])
+                tuplaF = (multiplicacionC(tupla,tupla2))
+                suma+= (tuplaF[0]**1)
+            else:
+                suma+= (matriz[i][j]**2)
+    return (suma**0.5)
+
+
+def checkHermitian(matriz):
+    matrizR=transpuestaM(conjugadaM(matriz))
+    return(matriz==matrizR)
+    
             
 def accionM():
     print("Ingrese una operacion")
