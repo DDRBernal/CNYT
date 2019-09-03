@@ -34,6 +34,7 @@ checkUnitaria(matriz)
 productoTensor(matrizA,matrizB)
 accionM(matriz,vector)
     ''')
+
 def restaC(tuplaA,tuplaB):
     if (type(tuplaA)==int):num=tuplaA;tuplaA=(num,0)
     if (type(tuplaB)==int):num=tuplaB;tuplaB=(num,0)    
@@ -100,14 +101,18 @@ def multiplicacionEscalar(tupla,c):
     return tuplaF
 
 def sumaV(vectorA,vectorB):
-    vectorR=[]
-    for i in range(len(vectorA)):
-        vectorR.append(sumaC(vectorA[0],vectorB[0]))
-    return vectorR
+    if (len(vectorA)==len(vectorB)):
+        vectorR=[]
+        for i in range(len(vectorA)):
+            vectorR.append(sumaC(vectorA[0],vectorB[0]))
+        return vectorR
+    else:
+        print("Los tamaños de los vectores deben ser iguales")
 
 def inversaV(vector):
-    tuplaF=(-tupla[0],-tupla[1])
-    return tuplaF
+    for i in range(len(vector)):
+        vector[i]=vector[i]*-1
+    return vector
 
 def sumaM(matrizA,matrizB):
     matrizR=[]
@@ -116,9 +121,10 @@ def sumaM(matrizA,matrizB):
             matrizR.append([])
             for k in range(len(matrizA[0])):matrizR[q].append(0)
         for i in range(0,len(matrizA)):
-            for j in range(len(matrizA[0])):matrizR[i][j]=sumaC(matrizA[i][j],matrizB[i][j])
-            
-    return matrizR
+            for j in range(len(matrizA[0])):matrizR[i][j]=sumaC(matrizA[i][j],matrizB[i][j])    
+        return matrizR
+    else:
+        print("Los tamaños de las matrices deben ser iguales")
 
 def restaM(matrizA,matrizB):
     matrizR=[]
@@ -128,7 +134,9 @@ def restaM(matrizA,matrizB):
             for k in range(len(matrizA[0])):matrizR[q].append(0)
         for i in range(0,len(matrizA)):
             for j in range(len(matrizA[0])):matrizR[i][j]=restaC(matrizA[i][j],matrizB[i][j])
-    return matrizR
+        return matrizR
+    else:
+        print("Los tamaños de las matrices deben ser iguales")
 
 def multiplicacionM(matrizA,matrizB):
     if (len(matrizB)==1 and (len(matrizB[0])==len(matrizA[0]))):
@@ -153,14 +161,17 @@ def multiplicacionM(matrizA,matrizB):
     return matrizR
 
 def multiplicacionMV(matriz,vector):
-    matrizR=[]
-    for i in range(0,len(matriz)):
-        suma=0
-        for j in range(0,len(matriz[i])):
-            suma= sumaC(suma,multiplicacionC(matriz[i][j],vector[j]))
-        matrizR.append(suma)
-        suma=0
-    return matrizR
+    if (len(matriz)==len(vector)):
+        matrizR=[]
+        for i in range(0,len(matriz)):
+            suma=0
+            for j in range(0,len(matriz[i])):
+                suma= sumaC(suma,multiplicacionC(matriz[i][j],vector[j]))
+            matrizR.append(suma)
+            suma=0
+        return matrizR
+    else:
+        print("El tamaño de el vector debe ser igual al numero de filas de la matriz")
 
 def inversaM(matriz):
     matrizR=[]
@@ -168,7 +179,6 @@ def inversaM(matriz):
         matrizR.append([int(i) for i in range(0,len(matriz[0]))]);
         for j in range(0,len(matriz[0])):
             matrizR[i][j]=matriz[i][j]*-1
-                       
     return matrizR
 
 def multiplicacionME(matriz,c):
@@ -193,53 +203,16 @@ def conjugadaM(matriz):
     matrizR=[]
     for i in range(0,len(matriz)):
         for j in range(0,len(matriz[i])):
-            tuplaA=matriz[i][j]
-            if (type(tuplaA)==int):num=tuplaA;tuplaA=(num,0)
-            if (tuplaA[0]>=0 and tuplaA[1]>=0): tuplaA=(tuplaA[0],-tuplaA[1])
-            if (tuplaA[0]<=0 and tuplaA[1]>=0): tuplaA=(tuplaA[0],-tuplaA[1])
-            if (tuplaA[0]>=0 and tuplaA[1]<=0): tuplaA=(tuplaA[0],abs(tuplaA[1]))
-            matriz[i][j]=tuplaA
-    return matriz            
+            tup=matriz[i][j]
+            if (type(tup)==int):matriz[i][j]*=-1
+            else: matriz[i][j]=(matriz[i][j][0]*-1,matriz[i][j][1]*-1)
+    return matriz
 
 def adjuntaM(matriz):
-    global matrizR
-    matrizR=[]
-    for i in range(0,len(matriz)):
-        for j in range(0,len(matriz[i])):
-            adj(i,j,matriz)
-            
-    for i in range(0,len(matrizR)):
-        if (i%3==0 and i!=0):
-            print()
-        print(matrizR[i],end=' ')
-                    
-def adj(a,b,matriz):
-    global matrizR
-    vector=[]
-    for i in range(0,len(matriz)):
-        contante=-1
-        for j in range(0,len(matriz[i])):
-            if (a!=i and b!=j):
-                vector.append(matriz[i][j])
-                if (len(vector)==4):
-                    matrizR.append(determinante(vector,contante**(a+b)))
-                    vector=[]
-
-def determinante(vector,constante):
-    return (constante*((vector[0]*vector[3])-(vector[1]*vector[2])))
+    return conjugadaM(transpuestaM(matriz))
                 
 def distanciaM(matrizA,matrizB):
-    suma=-float("inf")
-    if ((len(matrizA)==len(matrizB))and(len(matrizA[0])==len(matrizB[0]))):
-        matrizC=restaM(matrizA,matrizB)
-        matrizCC=conjugadaM(transpuestaM(matrizC))
-        matrizS=multiplicacionM(matrizC,matrizCC)
-        for i in range(len(matrizS)):
-            for j in range(matrizS[0]):
-                suma+ matrizS[i][j]
-    if (suma!=-float("inf")):return suma
-    else: print("Las matrices deben tener el mismo tamaño")
-        
+    return normaM(sumaM(matrizA,inversaM(matrizB)))
     
 def normaM(matriz):
     suma=0
@@ -260,9 +233,22 @@ def checkHermitian(matriz):
     return(matriz==matrizR)
 
 def checkUnitaria(matriz):
-    if ((len(matrizA)==len(matrizA[0]))):
-        pass
-
+    #selfcheckUnitaria([[(0,0),(0,1)],[(0,-1),(0,0)]])
+    matrizB=adjuntaM(matriz)
+    if ((len(matriz)==len(matriz[0]))):
+        return esUnitaria(multiplicacionM(adjuntaM(matriz),matriz))
+    
+def esUnitaria(matriz):
+    rta=True
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if (type(matriz[i][j])==int): matriz[i][j]=(matriz[i][j],0)
+            if (i==j):
+                if (matriz[i][j]!=(1,0)):rta=False
+            else:
+                if (matriz[i][j]!=(0,0)):rta=False
+    return rta
+        
 
 def productoTensor(matrizA,matrizB):
     matrizR=[]
@@ -294,7 +280,6 @@ def accionM(matriz,vector):
     a=input()
     a=a.lower().strip()
     print(a)
-    
     if (a=='*'): return multiplicacionMV(matriz,vector)
     
     
