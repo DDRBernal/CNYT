@@ -13,3 +13,6 @@ INSTALANDO PYTHON
 Vamos a instalar primero python (recomendable la version 3.7 para Windows) de la siguiente pagina
 https://www.python.org/downloads/, una vez instalado podemos verificar en cmd si esta instalado y que
 version.
+
+![py](https://user-images.githubusercontent.com/46855679/64225594-9f595880-cea1-11e9-8311-b047bb101c01.JPG)
+
