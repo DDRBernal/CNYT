@@ -1,4 +1,4 @@
-////////////////////// Manual de Usuario ///////////////////
+#////////////////////// Manual de Usuario ///////////////////
 Esta en una calculadora de matrices de numeros complejos (reales).
 Aqui se dara una pequeña explicacion de su uso.
 --Primero abrimos el archivo (o lo editamos y lo corremos con F5)
