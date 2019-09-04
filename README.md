@@ -1,3 +1,5 @@
+**README**
+
 **CALCULADORA NUMEROS COMPLEJOS, VECTORES Y MATRICES**
 
 Esta calculadora nos permite hacer distintas operaciones con numeros complejos. Los numeros complejos
@@ -24,5 +26,11 @@ Una vez esto, escribimos en la pequeña pantalla cmd.
 Cuando este abierto cmd (o consola) escribimos 'py' (sin comillas)
 
 ![py](https://user-images.githubusercontent.com/46855679/64225594-9f595880-cea1-11e9-8311-b047bb101c01.JPG)
+
+Con esto podemo verificar que python se instalo correctamente en nuestro ordenador.
+
+Ahora decargamos el contenido y compiamos el directorio que esta subrayado en la imagen.
+
+![python](https://user-images.githubusercontent.com/46855679/64278637-d451c380-cf12-11e9-8ddd-d577b274cf8b.PNG)
 
 
