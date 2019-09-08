@@ -98,6 +98,18 @@ varias funciones, para asi poder rectificar su comportamiento en el programa.
 ![test](https://user-images.githubusercontent.com/46855679/64483567-dbeec200-d1c9-11e9-92c9-fb510a7d2fa6.JPG)
 
 
+**REALIZAR LAS PRUEBAS UNITTEST**
+
+Para esto nos dirijimos a la carpeta que contenga los archivos descargados, una vez ahí en la direccion escribimos cmd
+y presionamos enter.
+
+![carpeta](https://user-images.githubusercontent.com/46855679/64491282-5d773c00-d22c-11e9-9faa-7667da16035d.JPG)
+
+Cuando se halla abierto la consola escribiremos lo siguiente:
+
+![test1](https://user-images.githubusercontent.com/46855679/64491327-20f81000-d22d-11e9-8e88-26309127684a.JPG)
+
+Automaticamente se habran realizado las pruebas.
 
 **AUTOR**
 
