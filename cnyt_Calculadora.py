@@ -95,8 +95,9 @@ def faseC(tuplaA):
 
 
 def multiplicacionEV(vector,c):
-    vectorF = [vector[0]*c,vector[1]*c]
-    return vectorF
+    for i in range(len(vector)):
+        vector[i]= c*vector[i]
+    return vector
 
 def sumaV(vectorA,vectorB):
     if (len(vectorA)==len(vectorB)):
@@ -185,7 +186,7 @@ def multiplicacionME(matriz,c):
         matrizR.append([int(i) for i in range(0,len(matriz[0]))]);
         for j in range(0,len(matriz[0])):
             matrizR[i][j]= c*matriz[i][j]
-    return matriz
+    return matrizR
 
 def transpuestaM(matriz):
     matrizR=[]
@@ -202,8 +203,7 @@ def conjugadaM(matriz):
     for i in range(0,len(matriz)):
         for j in range(0,len(matriz[i])):
             tup=matriz[i][j]
-            if (type(tup)==int):matriz[i][j]*=-1
-            else: matriz[i][j]=(matriz[i][j][0]*-1,matriz[i][j][1]*-1)
+            if (type(tup)!=int):matriz[i][j]=(matriz[i][j][0]*-1,matriz[i][j][1]*-1)
     return matriz
 
 def adjuntaM(matriz):
@@ -228,7 +228,7 @@ def normaM(matriz):
 
 def checkHermitian(matriz):
     matrizR=transpuestaM(conjugadaM(matriz))
-    return(matriz==matrizR)
+    return(conjugadaM(matriz)==matrizR)
 
 def checkUnitaria(matriz):
     #selfcheckUnitaria([[(0,0),(0,1)],[(0,-1),(0,0)]])
@@ -246,28 +246,17 @@ def esUnitaria(matriz):
             else:
                 if (matriz[i][j]!=(0,0)):rta=False
     return rta
-        
 
+        
 def productoTensor(matrizA,matrizB):
     matrizR=[]
-    indice=indice2=indice3=0
-    m=[]
-    mm=[]
-    for a in range(len(matrizB)*2):
-        matrizR.append([])
-    for i in range(len(matrizB)):
-        for j in range(len(matrizA)):
-            for k in range(len(matrizA[0])):
-                while (indice2<len(matrizB[0])):
-                    if (len(matrizR[indice3])==((len(matrizB[0])*2))): indice3+=1
-                    matrizR[indice3].append(matrizA[j][k]*matrizB[i][indice2])
-                    indice2+=1
-                indice2=0
-        indice+=1
-    for algo in range(len(matrizR)):
-        if (algo%2==0):m.append(matrizR[algo]);
-        else: mm.append(matrizR[algo])
-    return m+mm 
+    for k in range(len(matrizA)*len(matrizB)):
+        matrizR.append([]);
+        for u in range(len(matrizA)*len(matrizB)):matrizR[k].append(-9999)
+    for i in range(len(matrizR)):
+        for j in range(len(matrizR[i])):
+            matrizR[i][j]=multiplicacionC(matrizA[i//len(matrizB)][j//len(matrizA)],matrizB[i%len(matrizB)][j%len(matrizA)])
+    return matrizR
 
     
 def accionM(matriz,vector):
