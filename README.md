@@ -18,7 +18,9 @@ Con el atajo Windows + R podemos acceder rápidamente, nos abrirá una pequeña 
 
 ![window](https://user-images.githubusercontent.com/46855679/64225937-16432100-cea3-11e9-9d21-b5403dfe4fd1.JPG)
 
-![cmd](https://user-images.githubusercontent.com/46855679/64482512-b5745b00-d1b8-11e9-9c3c-4c11c72a2176.JPG
+.
+
+![cmd](https://user-images.githubusercontent.com/46855679/64483407-e196d880-d1c6-11e9-9030-645e59b41312.JPG)
 
 Ahora para verificar que tenemos python en nuestro ordenador, escribimos "py" (sin comillas).
 
