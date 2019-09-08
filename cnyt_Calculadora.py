@@ -94,9 +94,9 @@ def faseC(tuplaA):
 #---------------------------------- calculadora matriz ----------------------------------------#
 
 
-def multiplicacionEscalar(tupla,c):
-    tuplaF = (tupla[0]*c,tupla[1]*c)
-    return tuplaF
+def multiplicacionEscalar(vector,c):
+    vectorF = (vector[0]*c,vector[1]*c)
+    return vectorF
 
 def sumaV(vectorA,vectorB):
     if (len(vectorA)==len(vectorB)):
