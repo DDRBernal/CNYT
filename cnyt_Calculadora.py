@@ -13,7 +13,7 @@ polarC(tuplaA)
 cartesianoC(tuplaA)
 faseC(tuplaA)
 ////// matrices ///////
-multiplicacionEscalar(tupla,c)
+multiplicacionEV(tupla,c)
 sumaV(vectorA,vectorB)
 inversaV(vector)
 sumaM(matrizA,matrizB)
@@ -94,8 +94,8 @@ def faseC(tuplaA):
 #---------------------------------- calculadora matriz ----------------------------------------#
 
 
-def multiplicacionEscalar(vector,c):
-    vectorF = (vector[0]*c,vector[1]*c)
+def multiplicacionEV(vector,c):
+    vectorF = [vector[0]*c,vector[1]*c]
     return vectorF
 
 def sumaV(vectorA,vectorB):
