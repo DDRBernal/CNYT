@@ -3,7 +3,6 @@ import math
 from math import atan
 print('''
 /////// numeros_complejos ///////
-
 restaC(tuplaA,tuplaB)
 sumaC(tuplaA,tuplaB)
 multiplicacionC(tuplaA,tuplaB)
@@ -14,7 +13,6 @@ polarC(tuplaA)
 cartesianoC(tuplaA)
 faseC(tuplaA)
 ////// matrices ///////
-
 multiplicacionEscalar(tupla,c)
 sumaV(vectorA,vectorB)
 inversaV(vector)
@@ -281,11 +279,4 @@ def accionM(matriz,vector):
     a=a.lower().strip()
     print(a)
     if (a=='*'): return multiplicacionMV(matriz,vector)
-    
-    
-          
-
-
-
-
     
