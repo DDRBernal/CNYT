@@ -70,7 +70,40 @@ Para los numeros complejos se ofrecen:
 
 Para los vectores y matrices se ofrecen:
 
-	1)
+	1) multiplicacion de un vector con un escalar, llamada multiplicacionEscalar(vector,c)
+	2) suma de vectores, llamada sumaV(vectorA,vectorB)
+    3) inversa de un vector, llamado inversaV(vector)
+	4) suma de matrices, llamado sumaM(matrizA,matrizB)
+	5) resta de matrices, llamado restaM(matrizA,matrizB)
+	6) multiplicacion de matrices, llamado multiplicacionM(matrizA,matrizB) 
+	7) multiplicacion de una matriz con un vector, llamado multiplicacionMV(matriz,vector)
+	8) inversa de una matriz, llamado inversaM(matriz)
+	9) multiplicacion de una matriz con un numero entero (escalar), llamado multiplicacionME(matriz,c)
+	10) transpuesta de una matriz, llamado transpuestaM(matriz)
+	11) conjugado de una matriz, llamado conjugadaM(matriz)
+	12) adjunta de una matriz, llamado adjuntaM(matriz)
+	13) distancia entre 2 matrices, llamado distanciaM(matrizA,matrizB)
+	14) norma de una matriz, llamado normaM(matriz)
+	15) verificar si una matriz es hermitian o no, llamado checkHermitian(matriz)
+	16) verificar si una matriz es unitaria o no, llamado checkUnitaria(matriz)
+	17) producto tensor de 2 matrices, llamado productoTensor(matrizA,matrizB)
+	18) realizar una accion de una matriz sobre un vector, llamado accionM(matriz,vector)
+	
+	
+**PRUEBAS UNITTEST**
+
+Las pruebas con ayuda de una libreria de python llamado unittest nos permite verificar el comportamiento de 
+varias funciones, para asi poder rectificar su comportamiento en el programa.
+
+![test](https://user-images.githubusercontent.com/46855679/64483567-dbeec200-d1c9-11e9-92c9-fb510a7d2fa6.JPG)
+
+
+
+**AUTOR**
+
+**DAVID RICARDO OTÁLORA BERNAL**
+
+
 
 
 
