@@ -46,8 +46,8 @@ def sumaC(tuplaA,tuplaB):
     return(tuplaFinal)
 
 def multiplicacionC(tuplaA,tuplaB):
-    if (type(tuplaA)==int):num=tuplaA;tuplaA=(num,0)
-    if (type(tuplaB)==int):num=tuplaB;tuplaB=(num,0)
+    if (type(tuplaA)!=tuple):num=tuplaA;tuplaA=(num,0)
+    if (type(tuplaB)!=tuple):num=tuplaB;tuplaB=(num,0)
     tuplaFinal1=((tuplaA[0]*tuplaB[0]),-(tuplaA[1]*tuplaB[1]))
     tuplaFinal2=(tuplaA[0]*tuplaB[1]),(tuplaA[1]*tuplaB[0])
     return (tuplaFinal1[0]+tuplaFinal1[1],tuplaFinal2[0]+tuplaFinal2[1])
@@ -232,9 +232,9 @@ def checkHermitian(matriz):
 
 def checkUnitaria(matriz):
     #selfcheckUnitaria([[(0,0),(0,1)],[(0,-1),(0,0)]])
-    matrizB=adjuntaM(matriz)
+    matrizB=conjugadaM(transpuestaM(matriz))
     if ((len(matriz)==len(matriz[0]))):
-        return esUnitaria(multiplicacionM(adjuntaM(matriz),matriz))
+        return esUnitaria(multiplicacionM(matriz,matrizB))
     
 def esUnitaria(matriz):
     rta=True
