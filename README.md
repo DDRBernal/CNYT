@@ -53,7 +53,7 @@ Un ejemplo:
 
 Tiene 2 partes, una de operaciones de numeros complejos (o reales) y otra de vectores, matrices complejas.
 
-# FUNCIONES NUMEROS COMPLEJOS
+**FUNCIONES NUMEROS COMPLEJOS**
 
 Para los numeros complejos se ofrecen:
 
@@ -67,7 +67,7 @@ Para los numeros complejos se ofrecen:
 	7) el cartesiano de un numero complejo, la funcion es complejoC(numero)
 	8) la fase de un numero complejo, la funcion es faseC(numero)
 	
-# FUNCIONES VECTORES Y MATRICES COMPLEJAS
+**FUNCIONES VECTORES Y MATRICES COMPLEJAS**
 
 Para los vectores y matrices se ofrecen:
 
