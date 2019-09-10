@@ -9,7 +9,7 @@ Ej:
 Para la calculadora lo vamos a representar de esta forma:
  (3,2) 
 
-INSTALANDO PYTHON
+# INSTALANDO PYTHON
 
 Vamos a instalar primero python (recomendable la version 3.7 para Windows) de la siguiente pagina
 https://www.python.org/downloads/, una vez instalado podemos verificar en cmd si esta instalado y que
@@ -49,11 +49,11 @@ Un ejemplo:
 ![prueba](https://user-images.githubusercontent.com/46855679/64482699-94ae0480-d1bc-11e9-9855-87da7e00e5fd.JPG)
 
    
-**QUE FUNCIONES OFRECE ESTE PROGRAMA?**
+# QUE FUNCIONES OFRECE ESTE PROGRAMA?
 
 Tiene 2 partes, una de operaciones de numeros complejos (o reales) y otra de vectores, matrices complejas.
 
-**FUNCIONES NUMEROS COMPLEJOS**
+# FUNCIONES NUMEROS COMPLEJOS**
 
 Para los numeros complejos se ofrecen:
 
@@ -67,7 +67,7 @@ Para los numeros complejos se ofrecen:
 	7) el cartesiano de un numero complejo, la funcion es complejoC(numero)
 	8) la fase de un numero complejo, la funcion es faseC(numero)
 	
-**FUNCIONES VECTORES Y MATRICES COMPLEJAS**
+# FUNCIONES VECTORES Y MATRICES COMPLEJAS
 
 Para los vectores y matrices se ofrecen:
 
@@ -91,7 +91,7 @@ Para los vectores y matrices se ofrecen:
 	18) realizar una accion de una matriz sobre un vector, llamado accionM(matriz,vector)
 	
 	
-**PRUEBAS UNITTEST**
+# PRUEBAS UNITTEST
 
 Las pruebas con ayuda de una libreria de python llamado unittest nos permite verificar el comportamiento de 
 varias funciones, para asi poder rectificar su comportamiento en el programa.
@@ -99,7 +99,7 @@ varias funciones, para asi poder rectificar su comportamiento en el programa.
 ![test](https://user-images.githubusercontent.com/46855679/64483567-dbeec200-d1c9-11e9-92c9-fb510a7d2fa6.JPG)
 
 
-**REALIZAR LAS PRUEBAS UNITTEST**
+# REALIZAR LAS PRUEBAS UNITTEST
 
 Para esto nos dirijimos a la carpeta que contenga los archivos descargados, una vez ahí en la direccion escribimos cmd
 y presionamos enter.
@@ -112,7 +112,7 @@ Cuando se halla abierto la consola escribiremos lo siguiente:
 
 Automaticamente se habran realizado las pruebas.
 
-**AUTOR**
+# AUTOR
 
 **DAVID RICARDO OTÁLORA BERNAL**
 
