@@ -49,11 +49,11 @@ Un ejemplo:
 ![prueba](https://user-images.githubusercontent.com/46855679/64482699-94ae0480-d1bc-11e9-9855-87da7e00e5fd.JPG)
 
    
-# QUE FUNCIONES OFRECE ESTE PROGRAMA?
+# ¿QUE FUNCIONES OFRECE ESTE PROGRAMA?
 
 Tiene 2 partes, una de operaciones de numeros complejos (o reales) y otra de vectores, matrices complejas.
 
-# FUNCIONES NUMEROS COMPLEJOS**
+# FUNCIONES NUMEROS COMPLEJOS
 
 Para los numeros complejos se ofrecen:
 
