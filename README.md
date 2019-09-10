@@ -1,4 +1,5 @@
-**CALCULADORA NUMEROS COMPLEJOS, VECTORES Y MATRICES**
+# CALCULADORA NUMEROS COMPLEJOS, VECTORES Y MATRICES
+
 Esta calculadora nos permite hacer distintas operaciones con numeros complejos. Los numeros complejos
 son una extensión de los números reales y forman un cuerpo algebraicamente cerrado. Se representan con
 una parte real y una imaginaria expresada con la letra i.
